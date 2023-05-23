@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #d5dbd6;
+    padding: 20px;
+}
+
+/* window_container */
+#window_container {
+    background-color: #fff;
+    width: 80%;
+    height: calc( 100vh - 40px );
+    margin: 0 auto;
+    display: flex;
+}
+
+#contats{
+    width: 40%;
+}
+
+#personal_chat{
+    width: 60%;
+}
+/* DEBUG */
+#contats {
+    border: 3px dotted violet;
+}
+#contats > div {
+    border: 1px dashed black;
+}
+#personal_chat{
+    border: 3px dotted green;
+}
+#personal_chat > div {
+    border: 1px dashed black;
+}
