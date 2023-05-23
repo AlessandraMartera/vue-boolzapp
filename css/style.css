@@ -28,11 +28,13 @@ input {
     background-color: #fff;
     flex-grow: 1;
     padding: 10px;
+    border-radius: 5px;
 }
 
 .info_contancts {
     flex-grow: 1;
 }
+
 .time {
     display: inline;
     font-size: small;
@@ -60,7 +62,7 @@ input {
 
 #personal_profile, #profil_contat_chat, #input_message_chat {
     height: 60px;
-    padding: 5px;
+    padding: 15px;
     background-color: #eaeaea;
     display: flex;
     align-items: center;
@@ -74,6 +76,7 @@ input {
 section i{
     color: #b1b1b1;
     margin-right: 8px;
+    margin-left: 8px;
 }
 
 /* active_notification */
@@ -181,14 +184,13 @@ main > #chat {
     background-color: #eaeaea;
 }
 
-
-
-
-
-
-
-
-
+#input_message_chat i {
+    width: 40px;
+    color: #6a7276;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
@@ -199,7 +201,7 @@ main > #chat {
 ***********/
 
 
-#side_bar {
+/* #side_bar {
     border: 3px dotted violet;
 }
 #side_bar > section {
@@ -210,4 +212,4 @@ main{
 }
 main > section {
     border: 1px dashed black;
-}
+} */
