@@ -4,56 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font's Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- mystyle -->
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
 
+    <div id="background_green"></div>
+
     <div id="window_container">
         <!-- contats -->
-        <div id="contats">
+        <div id="side_bar">
 
             <!-- personal profile -->
-            <div id="personal_profile">
-                <img src="#" alt="">
+            <section id="personal_profile">
+
+                <img src="img/img01.png" alt="">
+                
                 <h3>Sofia</h3>
-                <div>Icons</div>
-            </div>
+                
+                <i class="fa-solid fa-circle-notch"></i>
+                <i class="fa-solid fa-message"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            
+            </section>
 
             <!-- active notification -->
-            <div id="active_notification">
+            <section id="active_notification">
                 icon
                 <h5>Ricevi Notifica messaggi</h5>
                 <div>link notifiche</div>                
-            </div>
+            </section>
 
             <!-- contat's chats -->
-            <div id="chats">
-                <input type="text">
+            <section id="chats">
+                <div id="search_contats_chat">
+                    <input type="text">
+                </div>
+                
                 <div>
                     <img src="#" alt="">
                     <h4>Michele</h4>
                     <small>Ultimo mess...</small>
                     
                 </div>
-            </div>
+            </section>
         </div>
 
-        <!-- personal chat -->
-        <div id="personal_chat">
-            <div id="main_chat">
+        <!-- MAIN personal chat -->
+        <main>
+            <section id="profil_contats_chat">
                 img 
                 Michele 
                 incons
-            </div>
-            <div id="chat_messages">main chat</div>
-            <div id="input_message">
+            </section>
+            <section id="chat">main chat</section>
+            <section id="input_message_chat">
                 icon emoji
                 <input type="text">
                 invia
-            </div>
-        </div>
+            </section>
+        </main>
     </div>
     <!-- myscript -->
     <script src="js/main.js"></script>

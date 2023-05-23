@@ -5,11 +5,23 @@
 }
 body {
     background-color: #d5dbd6;
-    padding: 20px;
+
+}
+
+#background_green{
+    background-color: #009688;
+    height: 100px;
+}
+img {
+    border-radius: 50%;
+    width: 40px;
 }
 
 /* window_container */
 #window_container {
+    position: fixed;
+    top: 20px;
+    left: 10%;
     background-color: #fff;
     width: 80%;
     height: calc( 100vh - 40px );
@@ -17,23 +29,66 @@ body {
     display: flex;
 }
 
-#contats{
+/* SIDE_BAR */
+#side_bar{
     width: 40%;
 }
 
-#personal_chat{
+#personal_profile {
+    padding: 5px;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#personal_profile > h3 {
+    flex-grow: 1;
+}
+
+#personal_profile i{
+    color: #b1b1b1;
+    margin-right: 8px;
+}
+#active_notification {
+    background-color: #8edafc;
+}
+
+#search_chat {
+    background-color: #fafafa;
+}
+
+/* MAIN*/
+main{
     width: 60%;
 }
-/* DEBUG */
-#contats {
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***********
+   DEBUG 
+***********/
+
+
+#side_bar {
     border: 3px dotted violet;
 }
-#contats > div {
+#side_bar > section {
     border: 1px dashed black;
 }
-#personal_chat{
+main{
     border: 3px dotted green;
 }
-#personal_chat > div {
+main > section {
     border: 1px dashed black;
 }
