@@ -12,9 +12,11 @@ body {
     background-color: #009688;
     height: 100px;
 }
+
 img {
     border-radius: 50%;
-    width: 40px;
+    width: 50px;
+    height: 50px;
 }
 
 input {
@@ -67,6 +69,7 @@ input {
     gap: 5px;
 }
 
+/* contats sections */
 #active_notification > .icon{
     width: 40px;
     height: 40px;
@@ -98,6 +101,19 @@ input {
     gap: 30px;
 }
 
+/* contats */
+#contats {
+    overflow: auto;
+}
+#contat {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+#contat:hover {
+    background-color: #e8eaea;
+}
 
 /* MAIN*/
 main{
