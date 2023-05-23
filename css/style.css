@@ -151,7 +151,7 @@ section i{
     gap: 10px;
 }
 
-#contat:hover {
+#conctat:hover {
     background-color: #e8eaea;
 }
 
@@ -165,12 +165,13 @@ main > #chat {
     overflow: auto;
     background-image: url(../img/background_chat.png);
     padding: 40px;
+    display: flex;
+    flex-direction: column;
 }
 
 .message {
     min-width: 30%;
     max-width: 500px;
-    min-height: 50px;
     padding: 10px;
     margin: 10px;
     border-radius: 15px;
@@ -178,14 +179,14 @@ main > #chat {
     flex-direction: column;
 }
 
-.message.sent {
+.message.received {
     background-color: #d5f9ba;
-    clear: right;
+    width: fit-content;
 }
 
-.message.received {
-    float: right;
-    background-color: #ffffff;
+.message.sent {
+    background-color:  #ffffff;
+    align-self: flex-end;
 }
 
 .text_message {

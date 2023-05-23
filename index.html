@@ -60,7 +60,7 @@
             
             <!-- contat's chats -->
             <div id="contacts">
-                <div id="conctat" v-for="conctat in contacts">
+                <div id="conctat" v-for="conctat in contacts" @click="changeChat">
                     <img :src="conctat.avatar" alt="">
                     <div class="name_contacts">
                         <h4>{{conctat.name}}</h4>
@@ -68,44 +68,6 @@
                     </div>
                     <div class="time">12:00</div>
                 </div>
-                
-        <!--    <div id="contat">
-                    <img src="img/img05.png" alt="">
-                    <div class="name_contacts">
-                        <h4>Michele</h4>
-                        <small class="text_gray">Ultimo messaggio inviato...</small>
-                    </div>
-                    <div class="time">12:00</div>
-                </div>
-
-                <div id="contat">
-                    <img src="img/img05.png" alt="">
-                    <div class="name_contacts">
-                        <h4>Michele</h4>
-                        <small class="text_gray">Ultimo messaggio inviato...</small>
-                    </div>
-                    <div class="time">12:00</div>
-                </div>
-
-                <div id="contat">
-                    <img src="img/img05.png" alt="">
-                    <div class="name_contacts">
-                        <h4>Michele</h4>
-                        <small class="text_gray">Ultimo messaggio inviato...</small>
-                    </div>
-                    <div class="time">12:00</div>
-                </div>
-
-                <div id="contat">
-                    <img src="img/img05.png" alt="">
-                    <div class="name_contacts">
-                        <h4>Michele</h4>
-                        <small class="text_gray">Ultimo messaggio inviato...</small>
-                    </div>
-                    <div class="time">12:00</div>
-                </div>
-                
-            -->
             </div>
             
         </div>
@@ -132,35 +94,38 @@
 
             <section id="chat">
                 <!-- Box message sent -->
+                <div class="message received">
+                    <p class="text_message">ciao! questo è un massaggio lungo Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime magni accusamus placeat doloribus commodi alias similique, nam ut modi excepturi, veritatis quam iusto praesentium sint eos. Nemo voluptates corrupti ullam?</p>
+                    <div class="time">12:00</div>
+                </div>
+
+                <!-- Box message sent -->
                 <div class="message sent">
-                    <div class="text_message">ciao! questo è un massaggio lungo Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime magni accusamus placeat doloribus commodi alias similique, nam ut modi excepturi, veritatis quam iusto praesentium sint eos. Nemo voluptates corrupti ullam?</div>
+                    <p class="text_message">Questo è un messagiio abbasatanza lungo </p>
+                    <div class="time">12:00</div>
+                </div>
+
+                <!-- Box message sent -->
+                <div class="message received">
+                    <p class="text_message">ciao!</p>
                     <div class="time">12:00</div>
                 </div>
 
                 <!-- Box message received -->
                 <div class="message received">
-                    <div class="text_message">ciao!</div>
+                    <p class="text_message">ciao!</p>
                     <div class="time">12:00</div>
                 </div>
 
+                <!-- Box message sent -->
                 <div class="message sent">
-                    <div class="text_message">ciao!</div>
+                    <p class="text_message">ciao!</p>
                     <div class="time">12:00</div>
                 </div>
 
                 <!-- Box message received -->
                 <div class="message received">
-                    <div class="text_message">ciao!</div>
-                    <div class="time">12:00</div>
-                </div>
-
-                <div class="message sent">
-                    <div class="text_message">ciao!</div>
-                    <div class="time">12:00</div>
-                </div>
-
-                <div class="message sent">
-                    <div class="text_message">ciao!</div>
+                    <p class="text_message">ciao!</p>
                     <div class="time">12:00</div>
                 </div>
 

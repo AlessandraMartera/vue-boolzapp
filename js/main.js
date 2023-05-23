@@ -186,6 +186,12 @@ createApp({
             }
         ]
      
-      }
+        }
+    },
+    methods:{
+        changeChat(){
+            
+        }
     }
+
   }).mount('#window_container')
