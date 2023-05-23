@@ -20,6 +20,7 @@ createApp({
     data() {
       return {
 
+        activeChat: 0,
         mainUserName: 'Sofia',
         avatar: './img/avatar_9.png',
         contacts: [
@@ -189,8 +190,8 @@ createApp({
         }
     },
     methods:{
-        changeChat(){
-            
+        changeChat(idx){
+            this.activeChat = idx;
         }
     }
 

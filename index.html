@@ -60,7 +60,7 @@
             
             <!-- contat's chats -->
             <div id="contacts">
-                <div id="conctat" v-for="conctat in contacts" @click="changeChat">
+                <div id="conctat" v-for="(conctat, idx) in contacts" @click="changeChat(idx)">
                     <img :src="conctat.avatar" alt="">
                     <div class="name_contacts">
                         <h4>{{conctat.name}}</h4>
@@ -73,18 +73,19 @@
         </div>
 
         <!-- MAIN personal chat -->
-        <main>
+    
+        <main v-for="(contact, idx) in contacts" :class="( activeChat === idx ) ? 'active':'hidden'">
             <section id="profil_contat_chat">
-     
-                <img :src="contacts[0].avatar" alt="">
+        
+                <img :src="contact.avatar" alt="">
                 <div class="name_contacts">
-                    <h3>Michele</h3>
+                    <h3>{{contact.name}}</h3>
                     <div class="text_gray">
-                        ultimo accesso alle 
-                        <div class="time">12:00</div>
+                        ultimo accesso
+                        <!-- trovare un modo per visualizzare la data dell'ultimo messaggio -->
+                        <div class="time">{{contact.messages[0].date}}</div>
                     </div>
                 </div>
-                
                 
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <i class="fa-solid fa-paperclip"></i>
@@ -93,56 +94,34 @@
             </section>
 
             <section id="chat">
+                
+                <!--  v-for="(message, idx) in contact.messages" -->
+                <!-- Box message -->
+                <div  v-for="(message, idx) in contact.messages" :class="(message.status === 'sent') ? 'message sent': 'message received'">
+                    <p class="text_message">{{message.message}}</p>
+                    <div class="time">{{message.date}}</div>
+                </div>
+
                 <!-- Box message sent -->
-                <div class="message received">
+                <!-- <div class="message received">
                     <p class="text_message">ciao! questo è un massaggio lungo Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime magni accusamus placeat doloribus commodi alias similique, nam ut modi excepturi, veritatis quam iusto praesentium sint eos. Nemo voluptates corrupti ullam?</p>
                     <div class="time">12:00</div>
-                </div>
-
-                <!-- Box message sent -->
-                <div class="message sent">
-                    <p class="text_message">Questo è un messagiio abbasatanza lungo </p>
-                    <div class="time">12:00</div>
-                </div>
-
-                <!-- Box message sent -->
-                <div class="message received">
-                    <p class="text_message">ciao!</p>
-                    <div class="time">12:00</div>
-                </div>
-
-                <!-- Box message received -->
-                <div class="message received">
-                    <p class="text_message">ciao!</p>
-                    <div class="time">12:00</div>
-                </div>
-
-                <!-- Box message sent -->
-                <div class="message sent">
-                    <p class="text_message">ciao!</p>
-                    <div class="time">12:00</div>
-                </div>
-
-                <!-- Box message received -->
-                <div class="message received">
-                    <p class="text_message">ciao!</p>
-                    <div class="time">12:00</div>
-                </div>
-
-
+                </div> -->
             </section>
+
+            <!-- section write a message -->
             <section id="input_message_chat">
                 
-                    <i class="fa-regular fa-face-smile"></i>
-                
+                <i class="fa-regular fa-face-smile"></i>
                 
                 <input type="text" placeholder="Scrivi un messaggio">
                 
-                    <i class="fa-solid fa-microphone"></i>
-                
+                <i class="fa-solid fa-microphone"></i>
                 
             </section>
         </main>
+    
+        
     </div>
     <!-- VueScript -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
