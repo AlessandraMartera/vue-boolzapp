@@ -14,11 +14,14 @@
 // Milestone 4
 // Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
-const {createapp} = Vue;
+const { createApp } = Vue;
 
 createApp({
     data() {
       return {
+
+        mainUserName: 'Sofia',
+        avatar: './img/avatar_9.png',
         contacts: [
             {
                 name: 'Michele',
@@ -122,7 +125,7 @@ createApp({
             },
             {
                 name: 'Claudia',
-                avatar: './img/avatar_5.png',
+                avatar: './img/avatar_6.png',
                 visible: true,
                 messages: [
                     {

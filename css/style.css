@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 body {
     background-color: #d5dbd6;
     font-family: 'Montserrat', sans-serif;
@@ -27,8 +28,12 @@ input {
     border: none;
     background-color: #fff;
     flex-grow: 1;
-    padding: 10px;
+    padding: 15px 10px;
     border-radius: 5px;
+}
+
+i {
+    font-size: 20px;
 }
 
 .info_contancts {
@@ -58,11 +63,14 @@ input {
 /* SIDE_BAR */
 #side_bar{
     width: 40%;
+    border-right: 1px solid #dedede;
+    display: flex;
+    flex-direction: column;
 }
 
-#personal_profile, #profil_contat_chat, #input_message_chat {
-    height: 60px;
-    padding: 15px;
+#personal_profile,#active_notification, #search_contats_chat, #profil_contat_chat, #input_message_chat {
+    height: 70px;
+    padding: 8px;
     background-color: #eaeaea;
     display: flex;
     align-items: center;
@@ -81,6 +89,7 @@ section i{
 
 /* active_notification */
 #active_notification {
+    height: 80px;
     background-color: #8edafc;
     padding: 10px;
     display: flex;
@@ -117,6 +126,7 @@ section i{
 }
 
 #my_search_input {
+    width: 100%;
     display: flex;
     height: 40px;
     padding: 20px;
@@ -127,11 +137,14 @@ section i{
 }
 
 /* contats */
-#contats {
+#contacts {
+    flex-grow: 1;
     overflow: auto;
 }
 
-#contat {
+#conctat {
+    height: 80px;
+    border-bottom: 1px solid #e4e4e4;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -148,13 +161,15 @@ main{
 }
 
 main > #chat {
-    height: calc( 100% - 120px);
+    height: calc( 100% - 140px);
     overflow: auto;
     background-image: url(../img/background_chat.png);
     padding: 40px;
 }
-#chat .message {
-    width: 40%;
+
+.message {
+    min-width: 30%;
+    max-width: 500px;
     min-height: 50px;
     padding: 10px;
     margin: 10px;
@@ -174,7 +189,7 @@ main > #chat {
 }
 
 .text_message {
-    width: 100%;
+    flex-grow: 0;
 }
 
 .message .time {
