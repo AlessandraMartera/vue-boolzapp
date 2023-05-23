@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- mystyle -->
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Boolzapp</title>
 </head>
 <body>
 
@@ -27,7 +27,7 @@
 
                 <img src="img/img01.png" alt="">
 
-                <h3>Sofia</h3>
+                <h3 class="name_contacts">Sofia</h3>
                 
                 <i class="fa-solid fa-circle-notch"></i>
                 <i class="fa-solid fa-message"></i>
@@ -56,21 +56,18 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <input type="text" placeholder="Cerca o inzia una nuova Chat">
                     </div>
-                        
-                    
-                    
+                     
                 </div>
                 
                 <div id="contats">
                     <div id="contat">
                         <img src="img/img05.png" alt="">
-                        <div>
+                        <div class="name_contacts">
                             <h4>Michele</h4>
-                        <small>Ultimo mess...</small>
+                            <small class="text_gray">Ultimo mess...</small>
                         </div>
+                        <div class="time">12:00</div>
                     </div>
-                    
-                    
                     
                 </div>
             </section>
@@ -78,19 +75,75 @@
 
         <!-- MAIN personal chat -->
         <main>
-            <section id="profil_contats_chat">
-                img 
-                Michele 
-                incons
+            <section id="profil_contat_chat">
+     
+                <img src="img/img05.png" alt="">
+                <div class="name_contacts">
+                    <h3>Michele</h3>
+                    <div class="text_gray">
+                        ultimo accesso alle 
+                        <div class="time">12:00</div>
+                    </div>
+                </div>
+                
+                
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-paperclip"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            
             </section>
-            <section id="chat">main chat</section>
+
+            <section id="chat">
+                <!-- Box message sent -->
+                <div class="message sent">
+                    <div class="text_message">ciao!</div>
+                    <div class="time">12:00</div>
+                </div>
+
+                <!-- Box message received -->
+                <div class="message received">
+                    <div class="text_message">ciao!</div>
+                    <div class="time">12:00</div>
+                </div>
+
+                <div class="message sent">
+                    <div class="text_message">ciao!</div>
+                    <div class="time">12:00</div>
+                </div>
+
+                <!-- Box message received -->
+                <div class="message received">
+                    <div class="text_message">ciao!</div>
+                    <div class="time">12:00</div>
+                </div>
+
+                <div class="message sent">
+                    <div class="text_message">ciao!</div>
+                    <div class="time">12:00</div>
+                </div>
+
+                <div class="message sent">
+                    <div class="text_message">ciao!</div>
+                    <div class="time">12:00</div>
+                </div>
+
+
+            </section>
             <section id="input_message_chat">
-                icon emoji
-                <input type="text">
-                invia
+                <div>
+                    <i class="fa-regular fa-face-smile"></i>
+                </div>
+                
+                <input type="text" placeholder="Scrivi un messaggio">
+                <div>
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+                
             </section>
         </main>
     </div>
+    <!-- VueScript -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- myscript -->
     <script src="js/main.js"></script>
 </body>

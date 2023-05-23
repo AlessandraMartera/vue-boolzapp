@@ -8,9 +8,13 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.text_gray{
+    color: #b1b1b1;
+}
+
 #background_green{
     background-color: #009688;
-    height: 100px;
+    height: 120px;
 }
 
 img {
@@ -25,6 +29,17 @@ input {
     flex-grow: 1;
     padding: 10px;
 }
+
+.info_contancts {
+    flex-grow: 1;
+}
+.time {
+    display: inline;
+    font-size: small;
+    color: #b1b1b1;
+    align-self: flex-start;
+}
+
 
 /* window_container */
 #window_container {
@@ -43,7 +58,8 @@ input {
     width: 40%;
 }
 
-#personal_profile {
+#personal_profile, #profil_contat_chat, #input_message_chat {
+    height: 60px;
     padding: 5px;
     background-color: #eaeaea;
     display: flex;
@@ -51,11 +67,11 @@ input {
     gap: 5px;
 }
 
-#personal_profile > h3 {
+.name_contacts {
     flex-grow: 1;
 }
 
-#personal_profile i{
+section i{
     color: #b1b1b1;
     margin-right: 8px;
 }
@@ -69,6 +85,12 @@ input {
     gap: 5px;
 }
 
+.fa-bell-slash {
+    margin: 0;
+    color: #8edafc; 
+    
+}
+
 /* contats sections */
 #active_notification > .icon{
     width: 40px;
@@ -76,9 +98,9 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #8edafc;
     background-color: #fff;
     border-radius: 50%;
+   
 }
 
 #active_notification a {
@@ -105,9 +127,11 @@ input {
 #contats {
     overflow: auto;
 }
+
 #contat {
     padding: 10px;
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
@@ -119,6 +143,44 @@ input {
 main{
     width: 60%;
 }
+
+main > #chat {
+    height: calc( 100% - 120px);
+    overflow: auto;
+    background-image: url(../img/background_chat.png);
+    padding: 40px;
+}
+#chat .message {
+    width: 40%;
+    min-height: 50px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message.sent {
+    background-color: #d5f9ba;
+    clear: right;
+}
+
+.message.received {
+    float: right;
+    background-color: #ffffff;
+}
+
+.text_message {
+    width: 100%;
+}
+
+.message .time {
+    align-self: flex-end;
+}
+#profil_contat_chat {
+    background-color: #eaeaea;
+}
+
 
 
 
