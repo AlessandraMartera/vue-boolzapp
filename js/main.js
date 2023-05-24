@@ -24,6 +24,7 @@ createApp({
         mainUserName: 'Sofia',
         avatar: './img/avatar_9.png',
         newTextMessage: '',
+        newSearchContact: '',
         contacts: [
             {
                 name: 'Michele',
@@ -191,10 +192,13 @@ createApp({
         }
     },
     methods:{
+
+        // function to choice the chat
         changeChat(idx){
             this.activeChat = idx;
         },
 
+        // function to share a Message and an answer 
         shareAMessage(i) {
             this.contacts[i].messages.push({
                 date: '10/01/2020 15:30:55',
@@ -202,14 +206,34 @@ createApp({
                         status: 'sent'
             });
 
+            this.newTextMessage = '';
+
             setTimeout( () => {
                 this.contacts[i].messages.push({
                     date: '10/01/2020 15:30:55',
                             message: 'ok!',
                             status: 'received'
                 });
-            }, 1000)
+            }, 1000);
+        },
+
+        // function to search the contact
+        searchContact (){
+            
+            // let ciccio = this.contacts.name.search(this.newSearchContact);
+            // console.log(ciccio);
+
+            this.contacts.forEach(ObjContact => {
+
+                
+
+                // if ( this.newSearchContact === ObjContact.name ) {
+                //     console.log(ObjContact.name);
+                // };
+                
+            });
         }
+
     }
 
   }).mount('#window_container')

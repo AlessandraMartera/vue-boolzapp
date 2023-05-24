@@ -52,15 +52,25 @@
                 
             <div id="search_contats_chat">
                 <div id="my_search_input">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Cerca o inzia una nuova Chat">
+                    <i class="fa-solid fa-magnifying-glass" @click="searchContact()"></i>
+                    <input type="text" placeholder="Cerca o inzia una nuova Chat" v-model="newSearchContact" @keyup.enter="searchContact()">
                 </div>
-                    
+
+                <div class="contacts" :class="( newSearchContact.length === 0 ) ? 'hidden' : 'active' ">
+                    <div class="conctat" v-for="(conctat, idx) in contacts" @click="changeChat(idx)">
+                        <img :src="conctat.avatar" alt="">
+                        <div class="name_contacts">
+                            <h4>{{conctat.name}}</h4>
+                            <small class="text_gray">Ultimo messaggio inviato...</small>
+                        </div>
+                        <div class="time">12:00</div>
+                    </div>
+                </div>
             </div>
             
             <!-- contat's chats -->
-            <div id="contacts">
-                <div id="conctat" v-for="(conctat, idx) in contacts" @click="changeChat(idx)">
+            <div class="contacts" :class="( newSearchContact.length === 0 ) ? 'active' : 'hidden' ">
+                <div class="conctat" v-for="(conctat, idx) in contacts" @click="changeChat(idx)">
                     <img :src="conctat.avatar" alt="">
                     <div class="name_contacts">
                         <h4>{{conctat.name}}</h4>
@@ -106,15 +116,23 @@
 
             <!-- section write a message -->
             <section id="input_message_chat">
-                
-                <i class="fa-regular fa-face-smile"></i>
+                <div>
+                    <i class="fa-regular fa-face-smile"></i>
+                </div>
                 
                 <input type="text" placeholder="Scrivi un messaggio" v-model="newTextMessage" @keyup.enter="shareAMessage(idx)">
                 
                 <!-- Fare il v-if per decidere quale icona verrà selezionata -->
-                <i class="fa-solid fa-arrow-up-from-bracket" @click="shareAMessage(idx)"></i>
-                <!-- <i class="fa-solid fa-microphone"></i> -->
+                <div :class="( newTextMessage.length > 0 ) ? 'active':'hidden'">
+                    <i class="fa-solid fa-arrow-up-from-bracket"
+                        @click="shareAMessage(idx)">
+                    </i>
+                </div>
                 
+                <div  :class="(newTextMessage.length === 0) ? 'active' : 'hidden'">
+                     <i class="fa-solid fa-microphone"></i>
+                </div>
+               
             </section>
         </main>
     
