@@ -56,8 +56,9 @@
                     <input type="text" placeholder="Cerca o inzia una nuova Chat" v-model="newSearchContact" @keyup.enter="searchContact()">
                 </div>
 
-                <div class="contacts" :class="( newSearchContact.length === 0 ) ? 'hidden' : 'active' ">
-                    <div class="conctat" v-for="(conctat, idx) in contacts" @click="changeChat(idx)">
+                <div class="contacts">
+                    <div class="contact" v-for="(conctat, idx) in contacts" @click="changeChat(idx)" 
+                    :class="( newSearchContact.length > 0 ) && ( newSearchContact === conctat.name ) ? 'active_flex' : 'hidden' ">
                         <img :src="conctat.avatar" alt="">
                         <div class="name_contacts">
                             <h4>{{conctat.name}}</h4>
@@ -66,11 +67,12 @@
                         <div class="time">12:00</div>
                     </div>
                 </div>
+                
             </div>
             
             <!-- contat's chats -->
             <div class="contacts" :class="( newSearchContact.length === 0 ) ? 'active' : 'hidden' ">
-                <div class="conctat" v-for="(conctat, idx) in contacts" @click="changeChat(idx)">
+                <div class="contact" v-for="(conctat, idx) in contacts" @click="changeChat(idx)">
                     <img :src="conctat.avatar" alt="">
                     <div class="name_contacts">
                         <h4>{{conctat.name}}</h4>

@@ -144,7 +144,7 @@ section i{
     overflow: auto;
 }
 
-.conctat {
+.contact {
     height: 80px;
     border-bottom: 1px solid #e4e4e4;
     padding: 10px;
@@ -153,7 +153,7 @@ section i{
     gap: 10px;
 }
 
-.conctat:hover {
+.contact:hover {
     background-color: #e8eaea;
 }
 
@@ -215,10 +215,10 @@ main > #chat {
     display: block;
 }
 
-.fa-arrow-up-from-bracket::before.hidden {
-    display: none;
-    content: "";
+.active_flex{
+    display: flex;
 }
+
 
 .hidden {
     display: none;
