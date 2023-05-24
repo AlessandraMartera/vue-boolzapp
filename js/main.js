@@ -23,6 +23,7 @@ createApp({
         activeChat: 0,
         mainUserName: 'Sofia',
         avatar: './img/avatar_9.png',
+        newTextMessage: '',
         contacts: [
             {
                 name: 'Michele',
@@ -192,6 +193,22 @@ createApp({
     methods:{
         changeChat(idx){
             this.activeChat = idx;
+        },
+
+        shareAMessage(i) {
+            this.contacts[i].messages.push({
+                date: '10/01/2020 15:30:55',
+                        message: this.newTextMessage,
+                        status: 'sent'
+            });
+
+            setTimeout( () => {
+                this.contacts[i].messages.push({
+                    date: '10/01/2020 15:30:55',
+                            message: 'ok!',
+                            status: 'received'
+                });
+            }, 1000)
         }
     }
 

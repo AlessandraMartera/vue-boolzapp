@@ -102,11 +102,6 @@
                     <div class="time">{{message.date}}</div>
                 </div>
 
-                <!-- Box message sent -->
-                <!-- <div class="message received">
-                    <p class="text_message">ciao! questo è un massaggio lungo Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime magni accusamus placeat doloribus commodi alias similique, nam ut modi excepturi, veritatis quam iusto praesentium sint eos. Nemo voluptates corrupti ullam?</p>
-                    <div class="time">12:00</div>
-                </div> -->
             </section>
 
             <!-- section write a message -->
@@ -114,9 +109,11 @@
                 
                 <i class="fa-regular fa-face-smile"></i>
                 
-                <input type="text" placeholder="Scrivi un messaggio">
+                <input type="text" placeholder="Scrivi un messaggio" v-model="newTextMessage" @keyup.enter="shareAMessage(idx)">
                 
-                <i class="fa-solid fa-microphone"></i>
+                <!-- Fare il v-if per decidere quale icona verrà selezionata -->
+                <i class="fa-solid fa-arrow-up-from-bracket" @click="shareAMessage(idx)"></i>
+                <!-- <i class="fa-solid fa-microphone"></i> -->
                 
             </section>
         </main>
