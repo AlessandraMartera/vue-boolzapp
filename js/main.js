@@ -221,9 +221,15 @@ createApp({
         searchContact (){
             
            this.contacts.forEach( objContact => {
-                objContact
+
+                objContact.visible = false;
+
                 let ciccio = objContact.name.search(this.newSearchContact);
                 console.log(ciccio);
+
+                if( ciccio !== -1 ) {
+                    objContact.visible = true;
+                }
            });
             
 

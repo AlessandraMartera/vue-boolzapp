@@ -59,7 +59,7 @@
             
             <!-- contat's chats -->
             <div class="contacts">
-                <div class="contact" v-for="(conctat, idx) in contacts" @click="changeChat(idx)">
+                <div class="contact" v-for="(conctat, idx) in contacts" @click="changeChat(idx)" :class="( conctat.visible ) ? 'active_flex' : 'hidden'" >
                     <img :src="conctat.avatar" alt="">
                     <div class="name_contacts">
                         <h4>{{conctat.name}}</h4>
