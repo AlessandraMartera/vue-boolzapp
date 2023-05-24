@@ -53,25 +53,12 @@
             <div id="search_contats_chat">
                 <div id="my_search_input">
                     <i class="fa-solid fa-magnifying-glass" @click="searchContact()"></i>
-                    <input type="text" placeholder="Cerca o inzia una nuova Chat" v-model="newSearchContact" @keyup.enter="searchContact()">
+                    <input type="text" placeholder="Cerca o inzia una nuova Chat" v-model="newSearchContact" @keyup.enter="searchContact">
                 </div>
-
-                <div class="contacts">
-                    <div class="contact" v-for="(conctat, idx) in contacts" @click="changeChat(idx)" 
-                    :class="( newSearchContact.length > 0 ) && ( newSearchContact === conctat.name ) ? 'active_flex' : 'hidden' ">
-                        <img :src="conctat.avatar" alt="">
-                        <div class="name_contacts">
-                            <h4>{{conctat.name}}</h4>
-                            <small class="text_gray">Ultimo messaggio inviato...</small>
-                        </div>
-                        <div class="time">12:00</div>
-                    </div>
-                </div>
-                
             </div>
             
             <!-- contat's chats -->
-            <div class="contacts" :class="( newSearchContact.length === 0 ) ? 'active' : 'hidden' ">
+            <div class="contacts">
                 <div class="contact" v-for="(conctat, idx) in contacts" @click="changeChat(idx)">
                     <img :src="conctat.avatar" alt="">
                     <div class="name_contacts">
@@ -85,17 +72,16 @@
         </div>
 
         <!-- MAIN personal chat -->
-    
-        <main v-for="(contact, idx) in contacts" :class="( activeChat === idx ) ? 'active':'hidden'">
+        <main>
             <section id="profil_contat_chat">
         
-                <img :src="contact.avatar" alt="">
+                <img :src="contacts[activeChat].avatar" alt="">
                 <div class="name_contacts">
-                    <h3>{{contact.name}}</h3>
+                    <h3>{{contacts[activeChat].name}}</h3>
                     <div class="text_gray">
                         ultimo accesso
                         <!-- trovare un modo per visualizzare la data dell'ultimo messaggio -->
-                        <div class="time">{{contact.messages[0].date}}</div>
+                        <div class="time">{{contacts[activeChat].messages[0].date}}</div>
                     </div>
                 </div>
                 
@@ -109,7 +95,7 @@
                 
                 <!--  v-for="(message, idx) in contact.messages" -->
                 <!-- Box message -->
-                <div  v-for="(message, idx) in contact.messages" :class="(message.status === 'sent') ? 'message sent': 'message received'">
+                <div  v-for="(message, idx) in contacts[activeChat].messages" :class="(message.status === 'sent') ? 'message sent': 'message received'">
                     <p class="text_message">{{message.message}}</p>
                     <div class="time">{{message.date}}</div>
                 </div>

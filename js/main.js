@@ -220,18 +220,13 @@ createApp({
         // function to search the contact
         searchContact (){
             
-            // let ciccio = this.contacts.name.search(this.newSearchContact);
-            // console.log(ciccio);
+           this.contacts.forEach( objContact => {
+                objContact
+                let ciccio = objContact.name.search(this.newSearchContact);
+                console.log(ciccio);
+           });
+            
 
-            this.contacts.forEach(ObjContact => {
-
-                
-
-                // if ( this.newSearchContact === ObjContact.name ) {
-                //     console.log(ObjContact.name);
-                // };
-                
-            });
         }
 
     }
