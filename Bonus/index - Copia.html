@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- mystyle -->
     <link rel="stylesheet" href="css/style.css">
-    <title>Boolzapp</title>
+    <title>Boolzapp Bonus</title>
 </head>
 <body>
 
@@ -81,7 +81,7 @@
                     <div class="text_gray">
                         ultimo accesso
                         <!-- trovare un modo per visualizzare la data dell'ultimo messaggio -->
-                        <div class="time">{{contacts[activeChat].messages[0].date}}</div>
+                        <div class="time">{{contacts[activeChat].messages[(contacts[activeChat].messages.length - 1)].date}}</div>
                     </div>
                 </div>
                 
@@ -96,7 +96,23 @@
                 <!--  v-for="(message, idx) in contact.messages" -->
                 <!-- Box message -->
                 <div  v-for="(message, idx) in contacts[activeChat].messages" :class="(message.status === 'sent') ? 'message sent': 'message received'">
+                    <!-- menu delate and info message -->
+                    
+                    <div class="dropdown_menu_message">
+                        <div class="icon_menu" @click="activeDropDown(message)"><i class="fa-solid fa-chevron-down"></i></div>
+                        <ul class="dropdown_menu_choice" :class="( message.dropDownStatus ) ? 'active' : '' ">
+                            <li>Info message</li>
+                            <li @click="delateMessage(message, idx)">Delate message</li>
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    <!-- content message -->
                     <p class="text_message">{{message.message}}</p>
+                    <!-- hour message -->
                     <div class="time">{{message.date}}</div>
                 </div>
 

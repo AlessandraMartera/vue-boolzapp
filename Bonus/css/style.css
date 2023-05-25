@@ -1,0 +1,282 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #d5dbd6;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.text_gray{
+    color: #b1b1b1;
+}
+
+#background_green{
+    background-color: #009688;
+    height: 120px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
+
+img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+input {
+    border: none;
+    background-color: #fff;
+    flex-grow: 1;
+    padding: 15px 10px;
+    border-radius: 5px;
+}
+
+i {
+    font-size: 20px;
+}
+
+.info_contancts {
+    flex-grow: 1;
+}
+
+.time {
+    display: inline;
+    font-size: small;
+    color: #b1b1b1;
+    align-self: flex-start;
+}
+
+
+/* window_container */
+#window_container {
+    background-color: #fff;
+    width: 80%;
+    height: calc( 100vh - 40px );
+    margin: 20px auto;
+    display: flex;
+}
+
+/* SIDE_BAR */
+#side_bar{
+    width: 40%;
+    border-right: 1px solid #dedede;
+    display: flex;
+    flex-direction: column;
+}
+
+#personal_profile,#active_notification, #profil_contat_chat, #input_message_chat {
+    height: 70px;
+    padding: 8px;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.name_contacts {
+    flex-grow: 1;
+}
+
+section i{
+    color: #b1b1b1;
+    margin-right: 8px;
+    margin-left: 8px;
+}
+
+/* active_notification */
+#active_notification {
+    height: 80px;
+    background-color: #8edafc;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.fa-bell-slash {
+    margin: 0;
+    color: #8edafc; 
+    
+}
+
+/* contats sections */
+#active_notification > .icon{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+   
+}
+
+#active_notification a {
+    color: #5d849e;
+}
+
+#search_contats_chat {
+    background-color: #fafafa;
+    padding: 10px;
+    color: #b1b1b1; 
+}
+
+#my_search_input {
+    width: 100%;
+    display: flex;
+    height: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    align-items: center;
+    gap: 30px;
+}
+
+/* contats */
+.contacts {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.contact {
+    height: 80px;
+    border-bottom: 1px solid #e4e4e4;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact:hover {
+    background-color: #e8eaea;
+}
+
+/* MAIN*/
+main{
+    width: 60%;
+}
+
+main > #chat {
+    height: calc( 100% - 140px);
+    overflow: auto;
+    background-image: url(../img/background_chat.png);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    position: relative;
+    min-width: 30%;
+    max-width: 500px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message.received {
+    background-color: #d5f9ba;
+    width: fit-content;
+}
+
+.message.sent {
+    background-color:  #ffffff;
+    align-self: flex-end;
+}
+
+.text_message {
+    margin-right: 50px;
+    min-height: 30px;
+    padding: 3px;
+}
+
+.message .time {
+    align-self: flex-end;
+}
+
+/* Menu message to delate */
+.dropdown_menu_message {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    text-align: right;
+}
+
+.icon_menu {
+    display: none;
+}
+
+.message:hover .icon_menu {
+    display: block;
+}
+
+.dropdown_menu_choice{
+    display: none;
+    list-style: none;
+    background-color: #fff;
+    text-align: left;
+    position: relative;
+    z-index: 100;
+}
+
+.dropdown_menu_choice li {
+    padding: 16px;
+    font-size: small;
+}
+
+
+/* profil contat in chat */
+#profil_contat_chat {
+    background-color: #eaeaea;
+}
+
+#input_message_chat i {
+    width: 40px;
+    color: #6a7276;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active {
+    display: block;
+}
+
+.active_flex{
+    display: flex;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+
+
+/***********
+   DEBUG 
+***********/
+
+
+/* #side_bar {
+    border: 3px dotted violet;
+}
+#side_bar > section {
+    border: 1px dashed black;
+}
+main{
+    border: 3px dotted green;
+}
+main > section {
+    border: 1px dashed black;
+} */
