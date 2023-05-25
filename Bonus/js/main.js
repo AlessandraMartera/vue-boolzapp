@@ -14,6 +14,15 @@
 // Milestone 4
 // Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
+let DateTime = luxon.DateTime;
+let f = {month: 'numeric', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'};
+let now = DateTime.now().toLocaleString(f);
+
+
+// now = now.toLocaleString(f);      //=> '14 septembre'
+
+// console.log(now);
+
 const { createApp } = Vue;
 
 createApp({
@@ -34,7 +43,8 @@ createApp({
                 messages: [
                     {
                         dropDownStatus: false,
-                        date: '10/01/2020 15:30:55',
+                        date: '10/01/2020 15:30:55', 
+                        //   '10/01/2020 15:30:55',
                         message: 'Hai portato a spasso il cane?',
                         status: 'sent'
                     },
@@ -225,7 +235,7 @@ createApp({
         shareAMessage() {
             this.contacts[this.activeChat].messages.push({
                 dropDownStatus: false,
-                date: '10/01/2020 15:30:55',
+                date:  DateTime.now().toLocaleString(f),
                 message: this.newTextMessage,
                 status: 'sent'
             });
@@ -235,7 +245,7 @@ createApp({
             setTimeout( () => {
                 this.contacts[this.activeChat].messages.push({
                     dropDownStatus: false,
-                    date: '10/01/2020 15:30:55',
+                    date:  DateTime.now().toLocaleString(f),
                     message: 'ok!',
                     status: 'received'
                 });
