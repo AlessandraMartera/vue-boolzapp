@@ -259,10 +259,10 @@ createApp({
 
                 objContact.visible = false;
 
-                let ciccio = objContact.name.search(this.newSearchContact);
-                console.log(ciccio);
+                let positionSearch = objContact.name.toLowerCase().search(this.newSearchContact);
+                
 
-                if( ciccio !== -1 ) {
+                if( positionSearch !== -1 ) {
                     objContact.visible = true;
                 }
            });
@@ -271,7 +271,7 @@ createApp({
         },
 
         activeDropDown (objMessage){
-            console.log(`all'inizio lo status era ${objMessage.dropDownStatus}`);
+            // console.log(`all'inizio lo status era ${objMessage.dropDownStatus}`);
             
             if ( objMessage.dropDownStatus ) {
                 objMessage.dropDownStatus = false;
@@ -279,10 +279,10 @@ createApp({
                 objMessage.dropDownStatus = true;
             }
            
-            console.log(`dopo il click lo status e' ${objMessage.dropDownStatus}`);
+            // console.log(`dopo il click lo status e' ${objMessage.dropDownStatus}`);
             // dropDownStatus: true;
         },
-        delateMessage(objMessage, i){
+        delateMessage(i){
              this.contacts[this.activeChat].messages.splice( i, 1);
         }
 

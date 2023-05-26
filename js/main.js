@@ -224,7 +224,7 @@ createApp({
 
                 objContact.visible = false;
 
-                let ciccio = objContact.name.search(this.newSearchContact);
+                let ciccio = objContact.name.toLowerCase().search(this.newSearchContact);
                 console.log(ciccio);
 
                 if( ciccio !== -1 ) {
