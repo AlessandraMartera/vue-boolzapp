@@ -282,8 +282,9 @@ createApp({
             // console.log(`dopo il click lo status e' ${objMessage.dropDownStatus}`);
             // dropDownStatus: true;
         },
-        delateMessage(i){
+        delateMessage(objMessage, i){
              this.contacts[this.activeChat].messages.splice( i, 1);
+             objMessage.dropDownStatus = false;
         }
 
     }
